@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import cookieImage from './assets/cookie.png';
+import { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+
+const App = () =>{
+
+  const[count, setCount] = useState(0);
+  const [multiplier, setMultiplier] = useState(1)
+
+  const updateCount = () => {
+    setCount(count + multiplier);
+  }
+
+  const buyDoubleStuffed = () =>{
+    if(count >= 10){
+      setMultiplier(multiplier * 2)
+      setCount(count - 10)
+    }
+
+  }
+
+  const buyPartyPack = () =>{
+    if(count >= 100){
+      setMultiplier(multiplier * 5)
+      setCount(count - 100)
+    }
+  }
+
+  const buyFullFeast = () =>{
+    if(count >= 1000){
+      setMultiplier(multiplier * 10)
+      setCount(count - 1000)
+    }
+  }
+
+  return(
+    <div className='App'>
+      <div className = 'header'>
+        <h1>Cookie Selector</h1>
+        <h2>Count: {count} </h2>
+        <img className='Cookie' src={cookieImage} alt = "cookie Image" onClick={updateCount}/>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className='container'>
+        <div className='upgrade'>
+          <h3>Doubled Stuff 🍪</h3>
+          <p>2x per Click</p>
+          <button onClick={buyDoubleStuffed}>10 Samosas</button>
+
+        </div>
+        <div className='upgrade'>
+          <h3>Party Pack 🍪</h3>
+          <p>5x per Click</p>
+          <button onClick={buyPartyPack}>100 Samosas</button>
+       </div>
+       <div className='upgrade'>
+          <h3>Full Feast 🍪</h3>
+          <p>10x per Click</p>
+          <button onClick={buyFullFeast}>100 Samosas</button>
+
+       </div>
+        
+
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+    </div>
   )
 }
 
-export default App
+export default App; 
