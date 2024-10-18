@@ -1,9 +1,8 @@
-# React + Vite
+Cookie Chooser
+a game called Samosa Selector that is based on an incremental game called Cookie Clicker. The goal of the game is to produce as many cookies by clicking on the cookies as much as you can.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Screenshots
+![cookieChooser Screenshot](https://github.com/aadilq/cookieChooser/blob/main/src/assets/CookieApp.png)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# cookieChooser
+Authors
+@aadilq
